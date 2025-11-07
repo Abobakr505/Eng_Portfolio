@@ -211,7 +211,6 @@ function sendMail() {
 
   var params = {
     sendername: document.querySelector("#sendername").value,
-    subject: document.querySelector("#subject").value,
     replyto: document.querySelector("#replyto").value,
     message: document.querySelector("#message").value,
   };
