@@ -1246,6 +1246,7 @@ body.dark-theme{
     color: var(--text-color);
   }
 
+
 }
 
 @media screen and (min-width:768px){

@@ -326,7 +326,3 @@ function sendMail() {
 //       });
 //     }
 //   });
-<<<<<<< HEAD
-
-=======
->>>>>>> e3653eb7fcfb9f8b09d111fab88d4536bb34986e
