@@ -1041,6 +1041,7 @@ body.dark-theme{
 .contact__social-arrow{
   width: 32px;
   margin: 0 auto;
+  color: #ffffff;
 }
 
 .contact__social-data{
@@ -1055,7 +1056,7 @@ body.dark-theme{
   margin-bottom: .5rem;
 }
 .contact__social-description-2{
-  color: var(--white-color);
+  color: #ffffff;
   font-size: var(--small-font-size);
   font-weight: var(--font-semi-bold);
 }
@@ -1240,21 +1241,11 @@ body.dark-theme{
     background-color: transparent;
   }
 
-  .contact__social-arrow{
-    filter: invert(1);
-  }
 
   .contact__social-description-1{
     color: var(--text-color);
   }
 
-  .contact__social-description-2{
-    color: var(--title-color);
-  }
-
-  .dark-theme .contact__social-arrow{
-    filter: none;
-  }
 }
 
 @media screen and (min-width:768px){
@@ -1735,4 +1726,122 @@ body.dark-theme{
 .sed_name{
   margin-top: 1.5rem ;
   text-align: center;
+}
+
+/* ====== JOURNEY TIMELINE ====== */
+.journey__timeline{
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+/* الخط العمودي */
+.journey__line{
+  position: absolute;
+  left: 50%;
+  width: 6px;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  background: var(--first-color);
+}
+
+/* البطاقات */
+.journey__card{
+  position: relative;
+  width: 45%;
+  margin: 3rem 0;
+}
+
+/* يسار ويمين */
+.journey__card.left{
+  left: 0;
+  margin-right: auto;
+  text-align: right;
+}
+.journey__card.right{
+  margin-left: auto;
+  text-align: left;
+}
+
+/* المحتوى */
+.journey__content{
+  background-color: var(--body-color);
+  border: 4px solid var(--black-color);
+  padding: 4rem 1rem 2rem;
+  position: relative;
+  z-index: 5;
+  transition: 0.4s;
+}
+
+/* border متحرك */
+.journey__border{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--first-color);
+  top: 0;
+  left: 0;
+  transition: transform .4s;
+}
+
+.journey__card:hover .journey__border{
+  transform: translate(.75rem,.75rem);
+}
+
+/* أيقونات */
+.journey__icon{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.journey__icon i{
+  font-size: 2rem;
+  color: var(--title-color);
+  position: relative;
+  z-index: 5;
+}
+
+.journey__box{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: var(--first-color);
+  top: -2px;
+  right: -2px;
+}
+
+.journey__titles{
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+.journey__titles{
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+
+.journey__description{
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+}
+
+/* استجابة الهواتف */
+@media screen and (max-width: 768px){
+  .journey__card{
+    width: 90%;
+    left: 0 !important;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  .journey__line{
+    text-align: center;
+  }
+  .journey__card.right{
+    text-align: center;
+  }
+  .journey__card.left{
+    text-align: center;
+  }
 }

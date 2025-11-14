@@ -121,14 +121,14 @@ const sr = ScrollReveal({
   // reset: true // Animations repeat
 });
 
-sr.reveal(`.home__perfil, .about__image, .contact__mail`, { origin: `right` });
+sr.reveal(`.home__perfil, .about__image, .contact__mail , .journey__card.right`, { origin: `right` });
 sr.reveal(
   `.home__name, .home__info, 
             .about__container, .section__title-1, .about__info,
-            .contact__social, .contact__data`,
+            .contact__social, .contact__data , .journey__card.left  `,
   { origin: `left` }
 );
-sr.reveal(`.services__card, .projects__card , .skills__item`, {
+sr.reveal(`.services__card, .projects__card , .skills__item ,  .journey__line`, {
   interval: `100`,
 });
 
@@ -327,3 +327,4 @@ function sendMail() {
 //       });
 //     }
 //   });
+
