@@ -543,11 +543,6 @@
     </div>
   </div>
 
-  <div class="contact__box">
-    <input id="subject" type="text" name="user_subject" class="contact__input" required placeholder="Subject">
-    <label for="subject" class="contact__label">Subject</label>
-  </div>
-
   <div class="contact__box contact__area">
     <textarea name="user_message" id="message" class="contact__input" required placeholder="Message"></textarea>
     <label for="message" class="contact__label">Message</label>
@@ -555,7 +550,7 @@
 
   <p class="contact__message" id="contact-message"></p>
 
-  <button id="button" type="button" class="contact__button button">
+  <button id="button" type="button" class="contact__button button" onclick="sendMail()">
     <i class="ri-send-plane-fill"></i> Send Message
   </button>
 </div>

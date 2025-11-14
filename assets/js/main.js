@@ -206,18 +206,17 @@ window.addEventListener("focus", () => {
 
 function sendMail() {
   (function () {
-    emailjs.init("6nGwnsGKd0RPHSNcN"); // Account Public Key
+    emailjs.init("_W26j8svP3J84k40v"); // Account Public Key
   })();
 
   var params = {
     sendername: document.querySelector("#sendername").value,
-    subject: document.querySelector("#subject").value,
     replyto: document.querySelector("#replyto").value,
     message: document.querySelector("#message").value,
   };
 
-  var serviceID = "service_tgzd2om"; // Email Service ID
-  var templateID = "template_vk16gzo"; // Email Template ID
+  var serviceID = "service_jz0itsj"; // Email Service ID
+  var templateID = "template_fce1byj"; // Email Template ID
 
   Swal.fire({
     title: "Sending...",
@@ -327,4 +326,7 @@ function sendMail() {
 //       });
 //     }
 //   });
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3653eb7fcfb9f8b09d111fab88d4536bb34986e
