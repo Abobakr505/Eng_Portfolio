@@ -881,7 +881,7 @@ body.dark-theme{
 
 .journey__description{
   font-size: 0.9rem;
-  color: var(--text-color-light);
+  color: var(--text-color);
 }
 
 /* استجابة الهواتف */
@@ -1223,7 +1223,7 @@ body.dark-theme{
 }
 
 .contact__social-description-1{
-  color: var(--text-color-light);
+  color: var(--text-color);
   font-size: var(--small-font-size);
   margin-bottom: .5rem;
 }
