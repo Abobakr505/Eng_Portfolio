@@ -1268,6 +1268,7 @@ body.dark-theme{
 
 .footer__container{
   padding-block: 3rem 2rem;
+  padding-block-end: 1rem;
   row-gap: 2.5rem;
 }
 
@@ -1833,6 +1834,8 @@ body.dark-theme{
 
   .footer__container{
     padding-block: 4rem;
+      padding-block-end: 1rem;
+
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
   }
@@ -1845,6 +1848,33 @@ body.dark-theme{
   .scrollup{
     right: 3rem;
   }
+}
+.footer-credit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-credit a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 2rem;
+  font-size: 13px;
+  color: #fff; /* عدلها حسب لون الفوتر */
+  opacity: 0.6;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-credit a:hover {
+  opacity: 1;
+}
+
+.footer-credit img {
+  width: 33px;
+  height: 33px;
+  object-fit: contain;
 }
 
 
