@@ -125,12 +125,14 @@ sr.reveal(`.home__perfil, .about__image, .contact__mail , .journey__card.right`,
 sr.reveal(
   `.home__name, .home__info, 
             .about__container, .section__title-1, .about__info,
-            .contact__social, .contact__data , .journey__card.left  `,
+            .contact__social, .contact__data , .journey__card.left , .grad__stack , .grad__deco-box `,
   { origin: `left` }
 );
-sr.reveal(`.services__card, .projects__card , .skills__item ,  .journey__line`, {
+sr.reveal(`.services__card, .projects__card ,   .journey__line`, {
   interval: `100`,
 });
+sr.reveal(` .grad__slider `, { origin: `bottom` });
+sr.reveal(`.grad__tagline , .grad__description , .skills__item , .grad__badge , .grad__features  `, { origin: `top` });
 
 function handleScrollClick(buttonId, targetId) {
   document.getElementById(buttonId).addEventListener("click", (e) => {
@@ -258,6 +260,69 @@ function sendMail() {
       console.error(err);
     });
 }
+(function () {
+  const slider   = document.getElementById('gradSlider');
+  if (!slider) return;
+ 
+  const slides   = slider.querySelectorAll('.grad__slide');
+  const dotsWrap = document.getElementById('gradDots');
+  const prevBtn  = document.getElementById('gradPrev');
+  const nextBtn  = document.getElementById('gradNext');
+  const curEl    = document.getElementById('gradCurrent');
+  const totEl    = document.getElementById('gradTotal');
+ 
+  let current = 0;
+  let autoTimer;
+  const total = slides.length;
+ 
+  /* ── setup total & dots ── */
+  totEl.textContent = String(total).padStart(2, '0');
+ 
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'grad__dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Slide ' + (i + 1));
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+ 
+  /* ── go to slide ── */
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+ 
+    current = (index + total) % total;
+ 
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+    curEl.textContent = String(current + 1).padStart(2, '0');
+ 
+    resetAuto();
+  }
+ 
+  /* ── auto-play ── */
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 4000);
+  }
+ 
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+ 
+  /* ── touch / swipe ── */
+  let touchX = 0;
+  slider.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend',   e => {
+    const diff = touchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+ 
+  /* ── pause on hover ── */
+  slider.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  slider.addEventListener('mouseleave', resetAuto);
+ 
+  resetAuto();
+})();
 
 // طريقة بديلة لإرسال البريد الإلكتروني باستخدام Fetch API { Backend Server  GO Lang }
 // document.getElementById("button").addEventListener("click", async function () {
