@@ -171,31 +171,31 @@ handleScrollClick("scroll-down", "about");
 
 handleScrollClick("logo", "about");
 
-// تعطيل النقر بزر الماوس الأيمن
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-});
+// // تعطيل النقر بزر الماوس الأيمن
+// document.addEventListener("contextmenu", function (e) {
+//   e.preventDefault();
+// });
 
-// تعطيل تحديد النص والسحب
-document.addEventListener("selectstart", function (e) {
-  e.preventDefault();
-});
-document.addEventListener("dragstart", function (e) {
-  e.preventDefault();
-});
+// // تعطيل تحديد النص والسحب
+// document.addEventListener("selectstart", function (e) {
+//   e.preventDefault();
+// });
+// document.addEventListener("dragstart", function (e) {
+//   e.preventDefault();
+// });
 
-// تعطيل الاختصارات الخاصة بالنسخ (مثل Ctrl+C, Ctrl+V, Ctrl+U, ...)
-// يُنصح بإضافة المزيد من الاختصارات حسب الحاجة
-document.addEventListener("keydown", function (e) {
-  // منع (Ctrl+C), (Ctrl+V), (Ctrl+U) و (F12)
-  if (e.ctrlKey && (e.key === "c" || e.key === "v" || e.key === "u")) {
-    e.preventDefault();
-  }
-  // منع F12 (فتح أدوات المطور)
-  if (e.keyCode === 123) {
-    e.preventDefault();
-  }
-});
+// // تعطيل الاختصارات الخاصة بالنسخ (مثل Ctrl+C, Ctrl+V, Ctrl+U, ...)
+// // يُنصح بإضافة المزيد من الاختصارات حسب الحاجة
+// document.addEventListener("keydown", function (e) {
+//   // منع (Ctrl+C), (Ctrl+V), (Ctrl+U) و (F12)
+//   if (e.ctrlKey && (e.key === "c" || e.key === "v" || e.key === "u")) {
+//     e.preventDefault();
+//   }
+//   // منع F12 (فتح أدوات المطور)
+//   if (e.keyCode === 123) {
+//     e.preventDefault();
+//   }
+// });
 
 let pageTitle = document.title;
 window.addEventListener("blur", () => {
