@@ -1318,8 +1318,66 @@ body.dark-theme{
   border-color: var(--first-color);
   color: var(--first-color);
 }
- 
-/* Dark theme adjustments */
+ /* Action Buttons */
+.grad__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: .5rem;
+}
+
+.grad__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s, background-color .3s;
+  cursor: pointer;
+}
+
+.grad__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.grad__btn:active {
+  transform: translateY(0);
+}
+
+/* GitHub button */
+.grad__btn--github {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border: 2px solid var(--black-color);
+}
+
+.grad__btn--github:hover {
+  background-color: transparent;
+  color: var(--black-color);
+}
+
+/* APK button */
+.grad__btn--apk {
+  background-color: var(--first-color);
+  color: #fff;
+  border: 2px solid var(--first-color);
+}
+
+.grad__btn--apk:hover {
+  background-color: transparent;
+  color: var(--first-color);
+}
+
+/* Dark theme */
+.dark-theme .grad__btn--github:hover {
+  color: var(--white-color);
+  border-color: var(--white-color);
+}
+
 .dark-theme .grad__slider {
   box-shadow: 8px 8px 0 hsla(14, 80%, 50%, .4);
 }
@@ -1345,6 +1403,15 @@ body.dark-theme{
  
   .grad__description {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .grad__actions {
+    flex-direction: column;
+  }
+
+  .grad__btn {
+    justify-content: center;
   }
 }
 /*=============== CONTACT ===============*/
